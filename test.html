@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .hover {
+            width: 500px;
+            height: 500px;
+            background-color: red;
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+        }
+        .hover:hover, .hover:focus, .hover:active {
+            -webkit-transition: all 0.5s linear;
+            -moz-transition: all 0.5s linear;
+            -o-transition: all 0.5s linear;
+            transition: all 0.5s linear;
+            background-color: #000;
+        }
+
+    </style>
+</head>
+<body>
+<div class="hover"></div>
+</body>
+</html>
