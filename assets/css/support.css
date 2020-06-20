@@ -37,8 +37,8 @@ html,body
 {
     font-size: 15px;
     transition: all 0.5s linear;
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
 }
 .top22_jianbian2
 {
@@ -64,8 +64,8 @@ html,body
 {
     font-size: 13px;
     transition: all 0.5s linear;
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
 }
 .top22_chinese_jianbian2
 {
@@ -74,58 +74,7 @@ html,body
     text-decoration: none;
     transition: all 0.5s linear;
 }
-.mba_ico
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/mac/mba_ico.svg") no-repeat center 9px;
-    background-size: 55px 55px;
-}
-.mbp13_ico
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/mac/mbp13_ico.svg") no-repeat center 11px;
-    background-size: 55px 55px;
-}
-.mbp16_ico
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/mac/mbp16_ico.svg") no-repeat center 14px;
-    background-size: 55px 55px;
-}
-.iMac_ico
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/mac/imac_ico.svg") no-repeat center 10px;
-    background-size: 55px 55px;
-}
-.macPro_ico
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/mac/macPro_ico.svg") no-repeat center 10px;
-    background-size: 55px 55px;
-}
-.noline
-{
-    color: #326bfc;
-    text-decoration: none;
-}
-.noline:hover
-{
 
-    color: #326bfc;
-    text-decoration: none;
-    border-bottom: 1px solid;
-}
 
 .buy
 {
@@ -154,9 +103,4 @@ html,body
     text-align: center;
     background:url("/assets/img/support/support.jpg") no-repeat left top;
     background-size: 100% 100%;
-}
-.search
-{
-    background:url("/assets/img/support/search.svg") no-repeat left top;
-    background-size: 70% 70%;
 }

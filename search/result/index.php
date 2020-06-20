@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Peach技术支持</title>
-    <link rel="Shortcut Icon" href="../assets/ico/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/support.css">
+    <title>在Peach Store搜索</title>
+    <link rel="Shortcut Icon" href="/assets/ico/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+
+<?php
+if (isset($_GET['key'])) {
+    $key = $_GET['key'];
+}
+?>
 <body>
 <div class="container_1">
     <!--        导航栏-->
@@ -17,7 +23,7 @@
         <div style="width: 100%;height: 100%;background: #262626;display: flex;">
             <div style="flex: 220;"></div>
             <a style="flex: 40; padding-top:10px" href="/">
-                <img src="../assets/img/index/apple.png" width="21px" height="21px"/>
+                <img src="/assets/img/index/apple.png" width="21px" height="21px"/>
             </a>
             <div style="flex: 100;"></div>
             <div class="top21">
@@ -64,13 +70,13 @@
             <div style="flex: 100;"></div>
             <div style="flex: 100;">
                 <a href="/search">
-                    <img src="../assets/img/index/search.svg" width="85px" height="85px">
+                    <img src="/assets/img/index/search.svg" width="85px" height="85px">
                 </a>
             </div>
             <div style="flex:50;"></div>
             <div style="flex: 100;">
                 <a href="/bag">
-                    <img src="../assets/img/index/shop.svg" width="45px" height="45px">
+                    <img src="/assets/img/index/shop.svg" width="45px" height="45px">
                 </a>
             </div>
             <div style="flex: 150;"></div>
@@ -78,32 +84,44 @@
         <!--            第二行结束-->
     </div>
     <!--        导航栏结束-->
-    <!--    中间-->
-    <div style="width: 100%;height: 530px;display: flex" class="middle">
-        <!--            左右3 8 3-->
-        <div style="flex:3"></div>
-        <div style="flex:7;display: flex;flex-direction: column;">
-            <!--            上下3 7-->
-            <div style="flex:3;font-size:45px;padding-top: 70px">
-                欢迎使用 Apple 支持
-            </div>
-            <div style="flex:18;padding-left: 2%;padding-top: 20px">
-                <div style="width: 96%;height: 43px;">
+
+    <!--    搜索-->
+    <div style="width: 100%;height: 400px;display: flex;flex-direction: column;">
+    <!--        上下2 10-->
+        <div style="flex: 2;display: flex">
+        <!--            左右2 5 2-->
+            <div style="flex:2;"></div>
+            <div style="flex:5;">
+                <!--            搜索-->
+                <div style=";text-align: center;padding-top: 25px">
                     <div class="input-group input-group-lg">
-                        <span class="input-group-addon" >
-                            <i class="glyphicon glyphicon-search" ></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="搜索支持" style="font-size: 15px">
+                    <span class="input-group-addon" >
+                        <i class="glyphicon glyphicon-search" ></i>
+                    </span>
+                        <input type="text" id="key"
+                               class="form-control" value="<?php echo $key; ?>"
+                               style="font-size: 15px" onkeydown="onKeyDown(event)">
                     </div>
-                    <!--     左右1 9-->
                 </div>
+                <!--            搜索-->
             </div>
-            <!--            上下3 7-->
+            <div style="flex:2;"></div>
         </div>
-        <div style="flex:3"></div>
-        <!--            左右3 8 3-->
+        <div style="flex: 10;display: flex;">
+            <!--            左右-->
+            <div style="flex: 1"></div>
+            <div style="flex: 8;padding-top: 25px">
+                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
+                <!--                商品列表-->
+                <br><br><br>
+                <!--                商品列表-->
+            </div>
+            <div style="flex: 1"></div>
+        </div>
+
     </div>
-    <!--    中间-->
+    <!--    搜索-->
+
     <!--        白条-->
     <div style="width: 100%;height: 30px;background: white"></div>
     <!--        白条-->
@@ -151,7 +169,6 @@
                         <p>在线选购</p>
                         <p>Genius Bar 天才吧</p>
                         <p>Apple夏令营</p>
-                        <p>Apple Trade In 换购计划</p>
                         <p>Apple Trade In 换购计划</p>
                         <p>分期付款</p>
                         <p>订单状态</p>
@@ -215,4 +232,13 @@
     <!--        最下边灰白色结束-->
 </div>
 </body>
+<script type="text/javascript">
+    function onKeyDown(event) {
+        var e = event || window.event || arguments.callee.caller.arguments[0];
+        var key = document.getElementById("key").value;
+        if (e && e.keyCode == 13) {
+            window.location.href="index.php?key="+key;
+        }
+    }
+</script>
 </html>
