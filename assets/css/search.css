@@ -108,54 +108,10 @@ html,body
     text-decoration: none;
     border-bottom: 2px solid;
 }
-.iPhone11
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 580px;width: 100%;
-    text-align: center;
-    background:url("/assets/img/index/iPhone11.jpg") no-repeat right bottom;
-    background-size: 110% 450px;
-}
 
-.iPadPro
+.goods
 {
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 580px;width: 100%;
-    text-align: center;
-    background:url("/assets/img/index/ipadPro.png") no-repeat center bottom ;
-    background-size: 800px 550px;
-
-}
-
-.iPhone11Pro
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/index/iPhone11Pro.jpg") no-repeat ;
-    background-size: 130% 100%;
-}
-.airpodsPro
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/index/airpodsPro.jpg") no-repeat center bottom;
-    background-size: 450px 300px;
-}
-.MacbookPro
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/index/MacbookPro.jpg") no-repeat center;
-    background-size: 1100px 800px;
-}
-.Watch
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/index/Watch.jpg") no-repeat center bottom;
-    background-size: 400px 360px;
+    height: 200px;width: 100%;
+    padding-top: 20px;padding-bottom: 20px;
+    display: flex;
 }
