@@ -5,12 +5,13 @@
     <title>Peach (中国大陆) - 官方网站</title>
     <link rel="Shortcut Icon" href="assets/ico/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <script  src="/public/nav.js"></script>
 </head>
 <body>
     <div class="container">
-<!--        导航栏-->
+        <!--        导航栏-->
         <div style="width: 100%;height: 84px;position: sticky;padding: 0;margin: 0;top: 0;">
-<!--            第一行-->
+        <!--            第一行-->
             <div style="width: 100%;height: 47%;background: #444444;display: flex;">
                 <div style="flex: 115;"></div>
                 <div style="flex: 5;padding-top: 9px">
@@ -20,72 +21,16 @@
                 </div>
                 <div style="flex: 15;"></div>
             </div>
-<!--            第一行结束-->
-<!--            第二行-->
-            <div style="width: 100%;height: 53%;background: #262626;display: flex;">
-                <div style="flex: 220;"></div>
-                <a style="flex: 40; padding-top:10px" href="/">
-                    <img src="assets/img/index/apple.png" width="21px" height="21px"/>
-                </a>
-                <div style="flex: 100;"></div>
-                <div class="top21">
-                    <a href="/mac" class="top22"
-                       onmouseout="this.className='top22_jianbian2'"
-                       onmouseover="this.className='top22_jianbian1'"
-                    >Mac</a>
-                </div>
-                <div style="flex: 80;"></div>
-                <div class="top21">
-                    <a href="/ipad" class="top22"
-                       onmouseout="this.className='top22_jianbian2'"
-                       onmouseover="this.className='top22_jianbian1'"
-                    >iPad</a>
-                </div>
-                <div style="flex: 80;"></div>
-                <div class="top21">
-                    <a href="/iphone" class="top22"
-                       onmouseout="this.className='top22_jianbian2'"
-                       onmouseover="this.className='top22_jianbian1'"
-                    >iPhone</a>
-                </div>
-                <div style="flex: 80;"></div>
-                <div class="top21">
-                    <a href="/watch" class="top22"
-                       onmouseout="this.className='top22_jianbian2'"
-                       onmouseover="this.className='top22_jianbian1'"
-                    >Watch</a>
-                </div>
-                <div style="flex: 80;"></div>
-                <div class="top21">
-                    <a href="/music" class="top22"
-                       onmouseout="this.className='top22_jianbian2'"
-                       onmouseover="this.className='top22_jianbian1'"
-                    >Music</a>
-                </div>
-                <div style="flex: 80;"></div>
-                <div class="top21_chinese">
-                    <a href="/support" class="top22_chinese"
-                       onmouseout="this.className='top22_chinese_jianbian2'"
-                       onmouseover="this.className='top22_chinese_jianbian1'"
-                    >技术支持</a>
-                </div>
-                <div style="flex: 100;"></div>
-                <div style="flex: 100;">
-                    <a href="/search">
-                        <img src="assets/img/index/search.svg" width="90px" height="90px">
-                    </a>
-                </div>
-                <div style="flex:20;"></div>
-                <div style="flex: 100;">
-                    <a href="/bag">
-                        <img src="assets/img/index/shop.svg" width="45px" height="45px" style="padding-top: 2px">
-                    </a>
-                </div>
-                <div style="flex: 150;"></div>
+            <!--            第一行-->
+            <!--            第二行-->
+            <div id="nav" style="width: 100%;height: 84px;position: sticky;padding: 0;margin: 0;top: 0;">
+                <script>
+                    nav_print();
+                </script>
             </div>
-            <!--            第二行结束-->
+            <!--            第二行-->
         </div>
-<!--        导航栏结束-->
+        <!--        导航栏结束-->
         <!--        白色条-->
         <div style="width: 100%;height: 33px;background: #ffffff;font-family: Myriad_set;">
             <p style="text-align: center;font-size: 12px;padding-top: 3px">
@@ -111,9 +56,9 @@
                         &nbsp; &nbsp;折价换购，仅 RMB 90/月或 RMB 2149起。
                     </p>
                     <p style="font-size: 18px;padding-top: 20px;">
-                       <a href="#" class="noline">进一步了解</a><span style="color: #326bfc;"> ›</span>
+                       <a href="#" class="noline">进一步了解</a><span style="color: #3299fc;"> ›</span>
                         &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="#" class="noline">购买</a><span style="color: #326bfc;"> ›</span>
+                        <a href="#" class="noline">购买</a><span style="color: #3299fc;"> ›</span>
                     </p>
                 </div>
                 <div style="flex:45;"></div>

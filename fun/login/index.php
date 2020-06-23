@@ -2,110 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Peach技术支持</title>
-    <link rel="Shortcut Icon" href="../assets/ico/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/support.css">
+    <title>在Peach Store搜索</title>
+    <link rel="Shortcut Icon" href="/assets/ico/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/login.css">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script  src="/public/nav.js"></script>
 </head>
 <body>
 <div class="container_1">
+
     <!--        导航栏-->
     <div style="width: 100%;height: 43px;padding: 0;margin: 0;top: 0;">
         <!--            第二行-->
-        <div style="width: 100%;height: 100%;background: #262626;display: flex;">
-            <div style="flex: 220;"></div>
-            <a style="flex: 40; padding-top:10px" href="/">
-                <img src="../assets/img/index/apple.png" width="21px" height="21px"/>
-            </a>
-            <div style="flex: 100;"></div>
-            <div class="top21">
-                <a href="/mac" class="top22"
-                   onmouseout="this.className='top22_jianbian2'"
-                   onmouseover="this.className='top22_jianbian1'"
-                >Mac</a>
-            </div>
-            <div style="flex: 80;"></div>
-            <div class="top21">
-                <a href="/ipad" class="top22"
-                   onmouseout="this.className='top22_jianbian2'"
-                   onmouseover="this.className='top22_jianbian1'"
-                >iPad</a>
-            </div>
-            <div style="flex: 80;"></div>
-            <div class="top21">
-                <a href="/iphone" class="top22"
-                   onmouseout="this.className='top22_jianbian2'"
-                   onmouseover="this.className='top22_jianbian1'"
-                >iPhone</a>
-            </div>
-            <div style="flex: 80;"></div>
-            <div class="top21">
-                <a href="/watch" class="top22"
-                   onmouseout="this.className='top22_jianbian2'"
-                   onmouseover="this.className='top22_jianbian1'"
-                >Watch</a>
-            </div>
-            <div style="flex: 80;"></div>
-            <div class="top21">
-                <a href="/music" class="top22"
-                   onmouseout="this.className='top22_jianbian2'"
-                   onmouseover="this.className='top22_jianbian1'"
-                >Music</a>
-            </div>
-            <div style="flex: 80;"></div>
-            <div class="top21_chinese">
-                <a href="#" class="top22_chinese"
-                   onmouseout="this.className='top22_chinese_jianbian2'"
-                   onmouseover="this.className='top22_chinese_jianbian1'"
-                >技术支持</a>
-            </div>
-            <div style="flex: 100;"></div>
-            <div style="flex: 100;">
-                <a href="/search">
-                    <img src="../assets/img/index/search.svg" width="85px" height="85px">
-                </a>
-            </div>
-            <div style="flex:50;"></div>
-            <div style="flex: 100;">
-                <a href="/bag">
-                    <img src="../assets/img/index/shop.svg" width="45px" height="45px">
-                </a>
-            </div>
-            <div style="flex: 150;"></div>
+        <div id="nav" style="width: 100%;height: 84px;;padding: 0;margin: 0;top: 0;">
+            <script>
+                nav_print();
+            </script>
         </div>
-        <!--            第二行结束-->
+        <!--            第二行-->
     </div>
     <!--        导航栏结束-->
-    <!--    中间-->
-    <div style="width: 100%;height: 530px;display: flex" class="middle">
-        <!--            左右3 8 3-->
-        <div style="flex:3"></div>
-        <div style="flex:7;display: flex;flex-direction: column;">
-            <!--            上下3 7-->
-            <div style="flex:3;font-size:45px;padding-top: 70px">
-                欢迎使用 Apple 支持
-            </div>
-            <div style="flex:18;padding-left: 2%;padding-top: 20px">
-                <div style="width: 96%;height: 43px;">
-                    <div class="input-group input-group-lg">
-                        <span class="input-group-addon" >
-                            <i class="glyphicon glyphicon-search" ></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="搜索支持" style="font-size: 15px">
-                    </div>
-                    <!--     左右1 9-->
-                </div>
-            </div>
-            <!--            上下3 7-->
+
+    <div style="flex-direction: column">
+        <!--            上下 -->
+        <div style="height:150px;text-align: center;padding-top: 60px">
+            <span style="font-size: 25px">
+                登录 Peach Store
+            </span>
         </div>
-        <div style="flex:3"></div>
-        <!--            左右3 8 3-->
+        <!-- 登录 -->
+        <div style="height:160px;text-align: center">
+            <form style="text-align: center">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username"
+                           style="display:inline;width:300px;"autocomplete="off" placeholder="Peach ID"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="passwd"
+                           style="display:inline;width:300px;"autocomplete="off" placeholder="密码" />
+                </div>
+                <button type="submit" class="btn btn-light">登录</button>
+            </form>
+        </div>
+        <!-- 登录 -->
+        <div style="text-align: center;height: 30px;font-size: 14px">
+            <a href="#" class="noline">忘记了 Peach ID 或密码？ </a>
+        </div>
+
+        <div style="text-align: center;height: 30px;font-size: 14px">
+            没有 Peach ID？
+            <a href="#" class="noline">立即创建您的 Peach ID。 </a>
+        </div>
     </div>
-    <!--    中间-->
+
     <!--        白条-->
-    <div style="width: 100%;height: 30px;background: white"></div>
+    <div style="width: 100%;height: 100px;background: white"></div>
     <!--        白条-->
     <!--        最下边灰白色-->
     <div style="width: 100%;height: 390px;background: #f2f2f5;display: flex">
@@ -151,7 +104,6 @@
                         <p>在线选购</p>
                         <p>Genius Bar 天才吧</p>
                         <p>Apple夏令营</p>
-                        <p>Apple Trade In 换购计划</p>
                         <p>Apple Trade In 换购计划</p>
                         <p>分期付款</p>
                         <p>订单状态</p>

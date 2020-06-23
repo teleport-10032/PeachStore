@@ -10,7 +10,7 @@ html,body
     src: url("/assets/font/Myriad_set.ttf")
 }
 
-.container
+.container_1
 {
     width: 100%;
     height: 100%;
@@ -38,8 +38,8 @@ html,body
 {
     font-size: 15px;
     transition: all 0.5s linear;
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
 }
 .top22_jianbian2
 {
@@ -65,8 +65,8 @@ html,body
 {
     font-size: 13px;
     transition: all 0.5s linear;
-    color: white;
-    text-decoration: none;
+    color: white !important;
+    text-decoration: none !important;
 }
 .top22_chinese_jianbian2
 {
@@ -75,46 +75,7 @@ html,body
     text-decoration: none;
     transition: all 0.5s linear;
 }
-.series3_ico
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/watch/series3_ico.svg") no-repeat center 14px;
-    background-size: 55px 55px;
-}
-.series5_ico
-{
-    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
-    height: 100%;width: 100%;
-    text-align: center;
-    background:url("/assets/img/watch/series5_ico.svg") no-repeat center 5px;
-    background-size: 55px 55px;
-}
-.noline
-{
-    color: #326bfc;
-    text-decoration: none;
-}
-.noline:hover
-{
 
-    color: #326bfc;
-    text-decoration: none;
-    border-bottom: 1px solid;
-}
-.noline_white
-{
-    color: white;
-    text-decoration: none;
-}
-.noline_white:hover
-{
-
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid;
-}
 
 .buy
 {
@@ -136,11 +97,35 @@ html,body
     background-color:#1672ef;border-radius:30px;
     color: white;padding-left: 12px;padding-top: 5px;font-size: 10px;
 }
-.series3
+.middle
 {
     background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
     height: 100%;width: 100%;
     text-align: center;
-    background:url("/assets/img/watch/series3.jpg") no-repeat 1px 50px;
-    background-size: 680px 360px;
+    background:url("/assets/img/support/support.jpg") no-repeat left top;
+    background-size: 100% 100%;
+}
+.noline
+{
+    color: #3299fc;
+    text-decoration: none;
+}
+.noline:hover
+{
+
+    color: #3299fc;
+    text-decoration: none;
+    border-bottom: 2px solid;
+}
+.noline2
+{
+    color: #0f5edd;
+    text-decoration: none;
+}
+.noline2:hover
+{
+
+    color: #0f5edd;
+    text-decoration: none;
+    border-bottom: 2px solid;
 }

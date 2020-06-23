@@ -1,8 +1,6 @@
 html,body
 {
-    width: 100%;
-    height: 100%;
-    padding: 0;
+    width: 100%;height: 100%;padding: 0;
     margin: 0;
     font-family: Myriad_set;
 }
@@ -11,7 +9,7 @@ html,body
     src: url("/assets/font/Myriad_set.ttf")
 }
 
-.container_1
+.container
 {
     width: 100%;height: 100%;
     padding: 0;
@@ -20,6 +18,7 @@ html,body
 .top21
 {
     flex: 100;padding-top: 15px;
+    font-family: Myriad_set;
     color: #adadad;
     width: 500px;
     height: 500px;
@@ -35,16 +34,16 @@ html,body
 
 .top22_jianbian1
 {
-    font-size: 15px !important;;
+    font-size: 15px;
     transition: all 0.5s linear;
-    color: white !important;
-    text-decoration: none !important;
+    color: white;
+    text-decoration: none;
 }
 .top22_jianbian2
 {
-    font-size: 15px !important;;
-    color: #adadad !important;;
-    text-decoration: none !important;;
+    font-size: 15px;
+    color: #adadad;
+    text-decoration: none;
     transition: all 0.5s linear;
 }
 
@@ -62,16 +61,16 @@ html,body
 }
 .top22_chinese_jianbian1
 {
-    font-size: 13px !important;;
+    font-size: 13px;
     transition: all 0.5s linear;
-    color: white !important;;
-    text-decoration: none !important;;
+    color: white;
+    text-decoration: none;
 }
 .top22_chinese_jianbian2
 {
-    font-size: 13px !important;;
-    color: #adadad !important;;
-    text-decoration: none !important;;
+    font-size: 13px;
+    color: #adadad;
+    text-decoration: none;
     transition: all 0.5s linear;
 }
 
