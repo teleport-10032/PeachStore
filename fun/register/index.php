@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>在Peach Store搜索</title>
-    <link rel="Shortcut Icon" href="../assets/ico/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/search.css">
+    <title>注册 - Peach (中国大陆)</title>
+    <link rel="Shortcut Icon" href="/assets/ico/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/register.css">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -16,7 +16,7 @@
     <!--        导航栏-->
     <div style="width: 100%;height: 43px;padding: 0;margin: 0;top: 0;">
         <!--            第二行-->
-        <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
+        <div id="nav" style="width: 100%;height: 84px;;padding: 0;margin: 0;top: 0;">
             <script>
                 nav_print();
             </script>
@@ -25,35 +25,42 @@
     </div>
     <!--        导航栏结束-->
 
-    <!--    搜索-->
-    <div style="width: 100%;height: 400px;display: flex">
-        <!--        左右2 5 2-->
-        <div style="flex:2"></div>
-        <div style="flex:5;display: flex;flex-direction: column">
-            <!--            上下2 5-->
-            <div style="flex:2;text-align: center;padding-top: 50px">
-                <span style="font-size: 40px">
-                    在Peach Store搜索
-                </span>
-            </div>
-            <div style="flex:5">
-                <div class="input-group input-group-lg">
-                    <span class="input-group-addon" >
-                        <i class="glyphicon glyphicon-search" ></i>
-                    </span>
-                    <input name="key" id="key" autofocus="autofocus"
-                           type="text" class="form-control" placeholder="搜索商品"
-                           style="font-size: 15px" onkeydown="onKeyDown(event)">
-                </div>
-            </div>
+    <div style="flex-direction: column">
+        <!--            上下 -->
+        <div style="height:150px;text-align: center;padding-top: 60px">
+            <span style="font-size: 25px">
+                注册 Peach ID
+            </span>
         </div>
-        <div style="flex:2"></div>
-        <!--        左右2 5 2-->
+        <!-- 登录 -->
+        <div style="height:160px;text-align: center">
+            <form style="text-align: center">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="username"
+                           style="display:inline;width:300px;"autocomplete="off" placeholder="Peach ID"/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="passwd"
+                           style="display:inline;width:300px;"autocomplete="off" placeholder="密码"
+                        maxlength="15"
+                    />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="repasswd"
+                           style="display:inline;width:300px;"autocomplete="off" placeholder="重复" />
+                </div>
+                <button type="submit" class="btn btn-light">注册</button>
+            </form>
+        </div>
+        <!-- 登录 -->
+        <!--        <div style="text-align: center;height: 30px;font-size: 14px">-->
+        <!--            <a href="#" class="noline">忘记了 Peach ID 或密码？ </a>-->
+        <!--        </div>-->
+
     </div>
-    <!--    搜索-->
 
     <!--        白条-->
-    <div style="width: 100%;height: 30px;background: white"></div>
+    <div style="width: 100%;height: 100px;background: white"></div>
     <!--        白条-->
     <!--        最下边灰白色-->
     <div style="width: 100%;height: 390px;background: #f2f2f5;display: flex">
@@ -93,15 +100,4 @@
     <!--        最下边灰白色结束-->
 </div>
 </body>
-
-<script type="text/javascript">
-    function onKeyDown(event) {
-        var e = event || window.event || arguments.callee.caller.arguments[0];
-        var key = document.getElementById("key").value;
-        if (e && e.keyCode == 13) {
-            window.location.href="result/index.php?key="+key;
-        }
-    }
-</script>
-
 </html>

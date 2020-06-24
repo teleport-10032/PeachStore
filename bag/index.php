@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>在Peach Store搜索</title>
+    <title>购物袋 - Peach (中国大陆)</title>
     <link rel="Shortcut Icon" href="/assets/ico/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bag.css">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -33,27 +33,28 @@ if (isset($_GET['key'])) {
 
     <!--    搜索-->
     <div style="width: 100%;height: auto;display: flex;flex-direction: column;">
-    <!--        上下2 10-->
-        <div style="flex: 2;display: flex">
+        <div style="height: 240px;display: flex">
         <!--            左右2 5 2-->
             <div style="flex:2;"></div>
-            <div style="flex:5;">
-                <!--            搜索-->
-                <div style=";text-align: center;padding-top: 25px">
-                    <div class="input-group input-group-lg">
-                    <span class="input-group-addon" >
-                        <i class="glyphicon glyphicon-search" ></i>
-                    </span>
-                        <input type="text" id="key"
-                               class="form-control" value="<?php echo $key; ?>"
-                               style="font-size: 15px" onkeydown="onKeyDown(event)">
-                    </div>
+            <div style="flex:5;text-align: center">
+                <div style="font-size: 36px;padding-top: 60px">
+                    你的购物袋总计 RMB 6,598。
                 </div>
-                <!--            搜索-->
+                <div style="font-size: 15px;margin-top: 20px">
+                    所有订单均可享受免费送货和退货服务。
+                </div>
+                <div style="height: 30px;padding-top: 30px">
+                    <a href="#">
+                        <button type="button" class="btn btn-default" style="width: 200px">
+                            结账
+                        </button>
+                    </a>
+                </div>
             </div>
             <div style="flex:2;"></div>
         </div>
-        <div style="flex: 10;display: flex;">
+
+        <div style="display: flex;">
             <!--            左右-->
             <div style="flex: 1"></div>
             <div style="flex: 8;padding-top: 25px">
@@ -62,7 +63,7 @@ if (isset($_GET['key'])) {
                 <div class="goods">
                     <!--    左右-->
                     <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
+                        <img src="/assets/img/search/iphonese.jpeg" width="220px" height="265px">
                     </div>
                     <div style="flex: 8;display: flex;flex-direction: column">
                     <!--上下-->
@@ -78,11 +79,23 @@ if (isset($_GET['key'])) {
                                 RMB 3,299起
                             </div>
                         </div>
-                        <div style="flex: 2">
+                        <div style="flex: 5">
                             <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
+                                红色<br>
+                                64GB<br>
+                                AppleCare+ 服务计划 (适用于 iPhone SE) - RMB 749<br>
+                            </div>
+                            <div style="height: 10px">
+                                <div style="padding-top: 4px">
+                                    <div style="width: 100%;height: 1px;background: #d1d1d6;"></div>
+                                </div>
+                            </div>
+                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px;
+                            ">
+                                <span style="bottom: 0px;">
+                                下午 3:00 前订购，预计送达日期：6月29日 - 免费<br>
+                                送货至： 历城区
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -91,7 +104,7 @@ if (isset($_GET['key'])) {
                 <div class="goods">
                     <!--    左右-->
                     <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
+                        <img src="/assets/img/search/iphonese.jpeg" width="220px" height="265px">
                     </div>
                     <div style="flex: 8;display: flex;flex-direction: column">
                         <!--上下-->
@@ -107,72 +120,27 @@ if (isset($_GET['key'])) {
                                 RMB 3,299起
                             </div>
                         </div>
-                        <div style="flex: 2">
+                        <div style="flex: 5">
                             <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
+                                红色<br>
+                                64GB<br>
+                                AppleCare+ 服务计划 (适用于 iPhone SE) - RMB 749<br>
+                            </div>
+                            <div style="height: 10px">
+                                <div style="padding-top: 4px">
+                                    <div style="width: 100%;height: 1px;background: #d1d1d6;"></div>
+                                </div>
+                            </div>
+                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px;
+                            ">
+                                <span style="bottom: 0px;">
+                                下午 3:00 前订购，预计送达日期：6月29日 - 免费<br>
+                                送货至： 历城区
+                                </span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="goods">
-                    <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
-                    </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
-                        <!--上下-->
-                        <div style="flex: 2;display: flex;">
-                            <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
-                                <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
-                                </div>
-                            </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
-                            </div>
-                        </div>
-                        <div style="flex: 2">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
-                            </div>
-                        </div>
-                    </div>
-                </div>                <div class="goods">
-                    <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
-                    </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
-                        <!--上下-->
-                        <div style="flex: 2;display: flex;">
-                            <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
-                                <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
-                                </div>
-                            </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
-                            </div>
-                        </div>
-                        <div style="flex: 2">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
 
 
                 <!--                商品列表-->

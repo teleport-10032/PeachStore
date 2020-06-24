@@ -10,7 +10,7 @@
 <body>
 <div class="container">
     <!--        导航栏-->
-    <div style="width: 100%;height: 84px;position: sticky;padding: 0;margin: 0;top: 0;">
+    <div style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
         <!--            第一行-->
         <div style="width: 100%;height: 47%;background: #444444;display: flex;">
             <div style="flex: 115;"></div>
@@ -409,79 +409,9 @@
             <!--                分割线-->
             <!--                五列-->
             <div style="flex:6;display: flex;">
-                <div style="flex:2;color: #595959;display: flex">
-                    <div style="flex: 3;text-align: left">
-                        <br>
-                        <p style="font-size: 12px;color: black">选购及了解</p>
-                        <p>Mac</p>
-                        <p>iPad</p>
-                        <p>iPhone</p>
-                        <p>Watch</p>
-                        <p>AirPods</p>
-                        <p>HomePod</p>
-                        <p>iPod touch</p>
-                        <p>Touch</p>
-                        <p>App Store充值卡</p>
-                    </div>
-                </div>
-                <div style="flex:2;color: #595959;display: flex">
-                    <div style="flex: 1;"></div>
-                    <div style="flex: 3;text-align: left">
-                        <br>
-                        <p style="font-size: 12px;color: black">服务</p>
-                        <p>Apple Music</p>
-                        <p>iCloud</p>
-                        <br>
-                        <p style="font-size: 12px;color: black">账户</p>
-                        <p>管理你的Apple ID</p>
-                        <p>iCloud.com</p>
-                    </div>
-                </div>
-                <div style="flex:2;color: #595959;display: flex">
-                    <div style="flex: 1;"></div>
-                    <div style="flex: 3;text-align: left">
-                        <br>
-                        <p style="font-size: 12px;color: black">Apple Store商店</p>
-                        <p>查找零售店</p>
-                        <p>在线选购</p>
-                        <p>Genius Bar 天才吧</p>
-                        <p>Apple夏令营</p>
-                        <p>Apple Trade In 换购计划</p>
-                        <p>Apple Trade In 换购计划</p>
-                        <p>分期付款</p>
-                        <p>订单状态</p>
-                        <p>选购帮助</p>
-                    </div>
-                </div>
-                <div style="flex:2;color: #595959;display: flex">
-                    <div style="flex: 1;"></div>
-                    <div style="flex: 3;text-align: left">
-                        <br>
-                        <p style="font-size: 12px;color: black">商务应用</p>
-                        <p>Apple与商务</p>
-                        <p>商务选购</p>
-                        <br>
-                        <p style="font-size: 12px;color: black">教育应用</p>
-                        <p>Apple与教育</p>
-                        <p>高校师生选购</p>
-                    </div>
-                </div>
-                <div style="flex:2;color: #595959;display: flex">
-                    <div style="flex: 1;"></div>
-                    <div style="flex: 3;text-align: left">
-                        <br>
-                        <p style="font-size: 12px;color: black">Apple 价值观</p>
-                        <p>辅助功能</p>
-                        <p>环境责任</p>
-                        <p>隐私</p>
-                        <p>供应商责任</p>
-                        <br>
-                        <p style="font-size: 12px;color: black">关于 Apple</p>
-                        <p>Apple 管理层</p>
-                        <p>创造就业</p>
-                        <p>联系 Apple</p>
-                    </div>
-                </div>
+                <script>
+                    bottom_print();
+                </script>
             </div>
             <br>
             <div style="width: 100%;height: 10px;font-size: 12px;color: #77777a;">
