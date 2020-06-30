@@ -162,7 +162,7 @@ while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_r
                     <label for="exampleInputFile">商品图片</label><br>
                     <img src="<?php echo "$pic" ;?>" width="170px" height="200px">
                     <div style="height: 5px;"></div>
-                    <input type="file" name="file" accept="image/jpeg"/ >
+                    <input type="file" name="file" accept="image/jpeg,image/png"/ >
                 </div>
                 <button type="submit" class="btn btn-default">保存</button>
             </form>

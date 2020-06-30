@@ -114,7 +114,7 @@
                                title='查看订单'
                             >$username</a>
                             &nbsp;
-                           <a href=\"/admin/goods\" class=\"top22_chinese\"
+                           <a href=\"/admin/goods\" target='_blank' class=\"top22_chinese\"
                                onmouseout=\"this.className='top22_chinese_jianbian2'\"
                                onmouseover=\"this.className='top22_chinese_jianbian1'\"
                                title='后台管理'

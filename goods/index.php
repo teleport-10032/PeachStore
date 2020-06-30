@@ -10,8 +10,37 @@
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script  src="/public/nav.js"></script>
 </head>
-
 <body>
+
+<?php
+include '../fun/conn.php';
+$conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+if (!$conn) {
+    exit("连接失败: " . $conn->connect_error);
+}
+$conn->query("set names 'utf8'");
+if(isset($_GET["id"]))
+    $id = $_GET["id"];
+
+$str = "select id,name,type,pic,package,description from goods where id=$id";
+$result = $conn->query($str);
+while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_row())
+{
+    $id = $idd;
+    $name = $namee;
+    $type = $typee;
+    $pic = $picc;
+    $package = $packagee;
+    $description = $descriptionn;
+    $package_array = explode(";",$package);
+    $len = count($package_array);
+    $minn = 99999999;
+    for($i = 1 ; $i <= $len ; $i+=2)
+        if($minn > $package_array[$i])
+            $minn = $package_array[$i];
+
+}
+?>
 <div class="container_1">
 
     <!--        导航栏-->
@@ -31,7 +60,7 @@
         <!--        左右-->
         <div style="flex: 1"></div>
         <div style="flex: 1;font-size: 23px;padding-top: 17px">
-                <strong>iPhone SE</strong>
+                <strong><?php echo $name?></strong>
         </div>
         <div style="flex: 5"></div>
 <!--        <div style="flex: 3;font-size: 15px;padding-top: 10px">-->
@@ -43,11 +72,11 @@
     <div style="height: 1px;background: #c4c4c4;margin-top:36px "></div>
 
     <!--    中间-->
-    <div style="display: flex">
+    <div style="display: flex;height: 400px">
         <!--        左右-->
         <div style="flex: 2"></div>
-        <div style="flex: 4">
-            <img width="441" height="529" src="/assets/img/goods/iphoneSE.jpeg">
+        <div style="flex: 4;padding-top: 60px">
+            <img width="300" height="230" style="overflow:hidden" src="<?php echo $pic ?>">
 
         </div>
 
@@ -57,36 +86,32 @@
             <div style="flex: 5"></div>
             <div style="flex: 3">
                 <span style="font-size: 30px;line-height: 15px;">
-                    <strong>购买 iPhone SE</strong>
+                    <strong>购买 <?php echo $name?></strong>
                     <br>
-                    <span style="font-size: 15px">RMB 3,299 起</span>
+                    <span style="font-size: 15px">RMB <?php echo $minn?> 起</span>
                 </span>
             </div>
             <div style="flex:1"></div>
             <div style="flex: 3">
                 <form role="form">
                     <div class="form-group">
-                        <label for="name">选择外观</label>
+                        <label for="name">选择套餐</label>
                         <select class="form-control">
-                            <option>红色</option>
-                            <option>黑色</option>
-                            <option>白色</option>
+                            <?php
+
+                            for($i = 0 ; $i < $len ; $i+=2)
+                            {
+                                $j = $i + 1;
+                                echo "<option>$package_array[$i] RMB $package_array[$j]</option>";
+                            }
+
+                            ?>
                         </select>
                     </div>
                 </form>
                 <br>
             </div>
             <div style="flex: 3">
-                <form role="form">
-                    <div class="form-group">
-                        <label for="name">选择配置</label>
-                        <select class="form-control">
-                            <option>32GB</option>
-                            <option>64GB</option>
-                            <option>128GB</option>
-                        </select>
-                    </div>
-                </form>
             </div>
             <div style="flex: 3;"></div>
             <div style="flex: 5;text-align: center">

@@ -365,7 +365,7 @@
                         <br><br>
                         <span style="font-size: 25px;text-align: left;;">
                         <strong>
-                            iPad
+                            iPad mini
                         </strong>
                     </span>
                         <br>

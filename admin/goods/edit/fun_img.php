@@ -6,7 +6,8 @@ if(isset($_GET["id"]))
 $filename = "../../../assets/img/goods/" . $id.".jpg";
 
 if (   ($_FILES["file"]["type"] == "image/jpeg")
-        || ($_FILES["file"]["type"] == "image/jpg")
+    || ($_FILES["file"]["type"] == "image/jpg")
+    || ($_FILES["file"]["type"] == "image/png")
     && ($_FILES["file"]["size"] < 50480000))
 {
 
