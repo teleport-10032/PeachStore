@@ -23,7 +23,7 @@
         </div>
         <!--            第一行-->
         <!--            第二行-->
-        <div id="nav" style="width: 100%;height: 84px;position: sticky;padding: 0;margin: 0;top: 0;">
+        <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
             <script>
                 nav_print();
             </script>
@@ -86,10 +86,10 @@
 
     <!--        iPadPro-->
     <div style="background: #f5f5f7;height: 1120px;width: 100%;">
-        <div style="height: 20px;width: 100%;font-size: 12px;text-align: center;padding-top: 5px;color: #535353">
+        <div style="height: 30px;width: 100%;font-size: 12px;text-align: center;padding-top: 5px;color: #535353">
             <p>
                 购买 iPad Pro 可享最高 24 期免息分期，仅 RMB 260/月起*。
-                <a href="#" class="noline">立即选购</a><span style="color: #3299fc;"> ›</span>
+                <a href="/ipad/all" class="noline">全部商品</a><span style="color: #326bfc;"> ›</span>
             </p>
         </div>
         <div class="iPadPro" style="display: flex;flex-direction: column">

@@ -164,3 +164,9 @@ html,body
     background:url("/assets/img/mac/mac_mba.jpg") no-repeat 500px 130px;
     background-size: 800px 150px;
 }
+.goods
+{
+    height: 200px;width: 100%;
+    padding-top: 20px;padding-bottom: 20px;
+    display: flex;
+}

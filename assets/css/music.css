@@ -181,3 +181,9 @@ html,body
     background:url("/assets/img/music/beats.jpg") no-repeat center 340px;
     background-size: 322px 428px;
 }
+.goods
+{
+    height: 200px;width: 100%;
+    padding-top: 20px;padding-bottom: 20px;
+    display: flex;
+}

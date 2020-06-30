@@ -208,3 +208,10 @@ html,body
     background:url("/assets/img/ipad/ipadMini.jpg") no-repeat 110px bottom;
     background-size: 570px 506px;
 }
+
+.goods
+{
+    height: 200px;width: 100%;
+    padding-top: 20px;padding-bottom: 20px;
+    display: flex;
+}

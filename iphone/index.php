@@ -23,7 +23,7 @@
         </div>
         <!--            第一行-->
         <!--            第二行-->
-        <div id="nav" style="width: 100%;height: 84px;position: sticky;padding: 0;margin: 0;top: 0;">
+        <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
             <script>
                 nav_print();
             </script>
@@ -32,6 +32,7 @@
     </div>
     <!--        导航栏结束-->
     <!--        bar-->
+
     <div style="width: 100%;height: 115px;background: #f7f7f9;display: flex;">
         <div style="flex: 7"></div>
         <!--     iphone11Pro_ico-->
@@ -83,6 +84,13 @@
 
         <div style="flex: 40;"></div>
     </div>
+
+    <div style="height: 30px;width: 100%;font-size: 12px;text-align: center;padding-top: 5px;color: #535353">
+        <p>
+            购买 iPhone 11 可享最高 24 期免息分期，仅 RMB 229/月起。
+            <a href="/iphone/all" class="noline">全部商品</a><span style="color: #326bfc;"> ›</span>
+        </p>
+    </div>s
     <!--        bar结束-->
 <!--    <div style="height: 20px;width: 100%;font-size: 12px;text-align: center;padding-top: 5px;color: #535353">-->
 <!--        <p>-->

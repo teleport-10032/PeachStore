@@ -23,7 +23,7 @@
             </div>
             <!--            第一行-->
             <!--            第二行-->
-            <div id="nav" style="width: 100%;height: 84px;position: sticky;padding: 0;margin: 0;top: 0;">
+            <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
                 <script>
                     nav_print();
                 </script>
@@ -90,8 +90,8 @@
         <!--        bar结束-->
         <div style="height: 20px;width: 100%;font-size: 12px;text-align: center;padding-top: 5px;color: #535353">
                 <p>
-                    于教育商店选购新款 MacBook Air 和新款 13 英寸 MacBook Pro 可享受优惠。
-                    <a href="#" class="noline">选购</a><span style="color: #3299fc;"> ›</span>
+                    于 Peach Store选购新款 MacBook Air 和新款 13 英寸 MacBook Pro 可享受优惠。
+                    <a href="/mac/all" class="noline">全部商品</a><span style="color: #326bfc;"> ›</span>
                 </p>
         </div>
         <!--        MacbookPro13-->

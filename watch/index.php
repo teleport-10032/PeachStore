@@ -69,7 +69,7 @@
     color:white;background: #0a72c3">
         <p>
             助健康一臂之力，购买 Apple Watch Series 5 可享最高 24 期免息分期，仅 RMB 133/月起*。
-            <a href="#" class="noline_white">立即选购</a><span style="color: white;"> ›</span>
+            <a href="/watch/all" class="noline_white">全部商品</a><span style="color: white;"> ›</span>
         </p>
     </div>
     <!--       Series5-->

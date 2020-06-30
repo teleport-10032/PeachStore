@@ -87,6 +87,8 @@ if (isset($_GET['key'])) {
                         </div>
                     </div>
                 </div>
+                <br>
+                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
 
                 <div class="goods">
                     <!--    左右-->
@@ -116,6 +118,8 @@ if (isset($_GET['key'])) {
                         </div>
                     </div>
                 </div>
+                <br>
+                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
 
                 <div class="goods">
                     <!--    左右-->
@@ -144,7 +148,11 @@ if (isset($_GET['key'])) {
                             </div>
                         </div>
                     </div>
-                </div>                <div class="goods">
+                </div>
+                <br>
+                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
+
+                <div class="goods">
                     <!--    左右-->
                     <div style="flex: 2;padding-left: 20px">
                         <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
@@ -172,8 +180,8 @@ if (isset($_GET['key'])) {
                         </div>
                     </div>
                 </div>
-
-
+                <br>
+                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
 
                 <!--                商品列表-->
             </div>

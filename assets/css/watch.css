@@ -144,3 +144,10 @@ html,body
     background:url("/assets/img/watch/series3.jpg") no-repeat 1px 50px;
     background-size: 680px 360px;
 }
+
+.goods
+{
+    height: 200px;width: 100%;
+    padding-top: 20px;padding-bottom: 20px;
+    display: flex;
+}

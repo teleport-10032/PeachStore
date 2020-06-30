@@ -30,7 +30,7 @@
         <div style="flex:7;display: flex;flex-direction: column;">
             <!--            上下3 7-->
             <div style="flex:3;font-size:45px;padding-top: 70px">
-                欢迎使用 Apple 支持
+                欢迎使用 Peach 支持
             </div>
             <div style="flex:18;padding-left: 2%;padding-top: 20px">
                 <div style="width: 96%;height: 43px;">
