@@ -1,17 +1,19 @@
-$flag = 1; //判断用户身份是否过期
-if (isset($_SESSION['admin'])) {
-$username = $_SESSION['admin'];
-$flag = 0;
-} else if (isset($_SESSION['teacher_mail'])) {
-$username = $_SESSION['admin'];
-$flag = 0;
-}
+<?php
+
+$str="10;1";
+$bag = "10;1;10;3;11;2;18;2";
+$pos = strpos($bag, $str);
+$len = strlen($str);
+$len2 = strlen($bag);
+//8位 12345634 查找34
+//pos=2 len=2
+//substr(0,pos-1).substr(pos+len,len2-1)
+//第0位则去掉前面的;
+if($pos == 0)
+    $new_bag = substr(0,$pos-1).substr($pos+$len,$len2-1);
+else
+    $new_bag = substr(1,$pos-1).substr($pos+$len,$len2-1);
+echo $new_bag;
 
 
-
-<span style="padding-right: 50px;font-size: 13px;">
-                            <a href="/fun/login" class="top22_chinese"
-                               onmouseout="this.className='top22_chinese_jianbian2'"
-                               onmouseover="this.className='top22_chinese_jianbian1'"
-                            >登录</a>
-                        </span>
+?>

@@ -17,9 +17,10 @@
     <div style="width: 100%;height: 43px;padding: 0;margin: 0;top: 0;">
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>

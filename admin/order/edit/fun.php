@@ -1,16 +1,16 @@
 <?php
 if(isset($_POST["id"]))
     $id = $_POST["id"];
-if(isset($_POST["goods_id"]))
-    $goods_id = $_POST["goods_id"];
-if(isset($_POST["package"]))
-    $package = $_POST["package"];
+if(isset($_POST["content"]))
+    $content = $_POST["content"];
 if(isset($_POST["price"]))
     $price = $_POST["price"];
 if(isset($_POST["target"]))
     $target = $_POST["target"];
 if(isset($_POST["statu"]))
     $statu = $_POST["statu"];
+if(isset($_POST["phone"]))
+    $phone = $_POST["phone"];
 
 
 
@@ -24,8 +24,8 @@ if (!$conn) {
 $conn->query("set names 'utf8'");
 
 $md5 = md5(md5($passwd));
-$sql = "update task set goods_id='$goods_id',package='$package',price='$price',target='$target',
- statu='$statu'
+$sql = "update task set content='$content',price='$price',target='$target',
+ statu='$statu',phone='$phone'
  where id='$id'";
 if (mysqli_query($conn, $sql))
 {

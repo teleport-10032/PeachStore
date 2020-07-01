@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>在Peach Store搜索</title>
-    <link rel="Shortcut Icon" href="/assets/ico/favicon.ico" type="image/x-icon" />
+    <link rel="Shortcut Icon" href="/assets/ico/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/search.css">
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script  src="/public/nav.js"></script>
+    <script src="/public/nav.js"></script>
 </head>
 <body>
 
@@ -19,24 +19,23 @@ if (!$conn) {
     exit("连接失败: " . $conn->connect_error);
 }
 $conn->query("set names 'utf8'");
-if(isset($_GET["id"]))
+if (isset($_GET["id"]))
     $id = $_GET["id"];
 
 $str = "select id,name,type,pic,package,description from goods where id=$id";
 $result = $conn->query($str);
-while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_row())
-{
+while (list($idd, $namee, $typee, $picc, $packagee, $descriptionn) = $result->fetch_row()) {
     $id = $idd;
     $name = $namee;
     $type = $typee;
     $pic = $picc;
     $package = $packagee;
     $description = $descriptionn;
-    $package_array = explode(";",$package);
+    $package_array = explode(";", $package);
     $len = count($package_array);
     $minn = 99999999;
-    for($i = 1 ; $i <= $len ; $i+=2)
-        if($minn > $package_array[$i])
+    for ($i = 1; $i <= $len; $i += 2)
+        if ($minn > $package_array[$i])
             $minn = $package_array[$i];
 
 }
@@ -47,9 +46,10 @@ while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_r
     <div style="width: 100%;height: 43px;padding: 0;margin: 0;top: 0;">
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>
@@ -60,12 +60,12 @@ while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_r
         <!--        左右-->
         <div style="flex: 1"></div>
         <div style="flex: 1;font-size: 23px;padding-top: 17px">
-                <strong><?php echo $name?></strong>
+            <strong><?php echo $name ?></strong>
         </div>
         <div style="flex: 5"></div>
-<!--        <div style="flex: 3;font-size: 15px;padding-top: 10px">-->
-<!--            折抵换购，仅 RMB 90/月 (0% 费率 24 个月分期) 或RMB 2149 起*-->
-<!--        </div>-->
+        <!--        <div style="flex: 3;font-size: 15px;padding-top: 10px">-->
+        <!--            折抵换购，仅 RMB 90/月 (0% 费率 24 个月分期) 或RMB 2149 起*-->
+        <!--        </div>-->
         <div style="flex: 1"></div>
     </div>
     <!--    上方-->
@@ -86,46 +86,46 @@ while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_r
             <div style="flex: 5"></div>
             <div style="flex: 3">
                 <span style="font-size: 30px;line-height: 15px;">
-                    <strong>购买 <?php echo $name?></strong>
+                    <strong>购买 <?php echo $name ?></strong>
                     <br>
-                    <span style="font-size: 15px">RMB <?php echo $minn?> 起</span>
+                    <span style="font-size: 15px">RMB <?php echo $minn ?> 起</span>
                 </span>
             </div>
             <div style="flex:1"></div>
             <div style="flex: 3">
-                <form role="form">
+
+
+                <form role="form" action="/bag/join_bag.php" method="post">
+                    <input name="goods" value="<?php echo $id?>" type="hidden">
                     <div class="form-group">
                         <label for="name">选择套餐</label>
-                        <select class="form-control">
+                        <select class="form-control" name="package_">
                             <?php
 
-                            for($i = 0 ; $i < $len ; $i+=2)
-                            {
+                            for ($i = 0; $i < $len; $i += 2) {
                                 $j = $i + 1;
-                                echo "<option>$package_array[$i] RMB $package_array[$j]</option>";
+                                $val = "$i".";".$package_array[$j];
+                                echo "<option value='$val'>$package_array[$i] RMB $package_array[$j]</option>";
                             }
 
                             ?>
                         </select>
                     </div>
+                    <div style="height: 40px"></div>
+                    <div class="form-group" style="text-align: center">
+                        <button type="submit" class="btn btn-default" style="width: 200px">
+                            添加到购物袋
+                        </button>
+                    </div>
                 </form>
+
                 <br>
             </div>
-            <div style="flex: 3">
-            </div>
             <div style="flex: 3;"></div>
-            <div style="flex: 5;text-align: center">
-                <a href="#">
-                    <button type="button" class="btn btn-default" style="width: 200px">
-                        加入购物车
-                    </button>
-                </a>
-            </div>
         </div>
         <div style="flex: 2"></div>
     </div>
     <!--    中间-->
-
 
 
     <!--        白条-->

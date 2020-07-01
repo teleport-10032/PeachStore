@@ -24,9 +24,10 @@
         <!--            第一行-->
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>
@@ -39,7 +40,9 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="iphone11Pro_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=21" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 5px">iPhone 11 Pro</p>
+                </a>
                 <p style="color: #ee722e;font-size: 12px;line-height: 5px">
                     新款
                 </p>
@@ -50,7 +53,10 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="iphone11_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+
+                <a href="/goods?id=10" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 7px">iPhone 11</p>
+                </a>
                 <p style="color: #ee722e;font-size: 12px;line-height: 3px">
                     新款
                 </p>
@@ -61,9 +67,12 @@
         <div style="flex: 8;display: flex;flex-direction:column;" class="iphonese_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+
+                <a href="/goods?id=9" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 12px">
                     iPhone SE
                 </p>
+                </a>
                 <p style="color: #ee722e;font-size: 12px;line-height: 3px">
                     新款
                 </p>
@@ -74,9 +83,12 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="iphonexr_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+
+                <a href="/goods?id=22" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 7px">
                     iPhone XR
                 </p>
+                </a>
             </div>
         </div>
         <!--        iphonexr_ico-->
@@ -113,10 +125,10 @@
             <span style="font-size: 15px;">折抵换购，仅 RMB 90/月或 RMB 2149 起*。</span>
             <br><br>
             <div class="buy">
-                <a href="#" style="text-decoration: none;color: white">购买</a>
+                <a href="/goods?id=9" style="text-decoration: none;color: white">购买</a>
             </div>
             <br>
-            <a href="#" class="noline" style="font-size: 18px;">
+            <a href="/goods?id=9" class="noline" style="font-size: 18px;">
                 进一步了解
             </a>
             <span style="color: #326bfc;font-size: 18px"> ›</span>
@@ -146,10 +158,10 @@
                 <span style="font-size: 15px;">折抵换购，仅 RMB 90/月或 RMB 2149 起*。</span>
                 <br><br>
                 <div class="buy">
-                    <a href="#" style="text-decoration: none;color: white">购买</a>
+                    <a href="/goods?id=10" style="text-decoration: none;color: white">购买</a>
                 </div>
                 <br>
-                <a href="#" class="noline" style="font-size: 18px;">
+                <a href="/goods?id=9" class="noline" style="font-size: 18px;">
                     进一步了解
                 </a>
                 <span style="color: #326bfc;font-size: 18px"> ›</span>
@@ -174,10 +186,10 @@
             <span style="font-size: 15px;">折抵换购，仅 RMB 273/月或 RMB 6549 起*。</span>
             <br><br>
             <div class="buy">
-                <a href="#" style="text-decoration: none;color: white">购买</a>
+                <a href="/goods?id=21" style="text-decoration: none;color: white">购买</a>
             </div>
             <br>
-            <a href="#" class="noline" style="font-size: 18px;">
+            <a href="/goods?id=21" class="noline" style="font-size: 18px;">
                 进一步了解
             </a>
             <span style="color: #326bfc;font-size: 18px"> ›</span>
@@ -236,11 +248,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 30px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=21" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=21" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>
@@ -279,11 +291,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 40px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=10" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=10" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>
@@ -322,11 +334,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 30px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=9" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=9" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>
@@ -366,11 +378,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 20px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=22" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=22" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>

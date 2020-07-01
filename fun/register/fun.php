@@ -14,13 +14,20 @@ if ("$re_passwd" != "$passwd") {
 } else {
     include '../conn.php';
     $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+
     if (!$conn) {
         exit("连接失败: " . $conn->connect_error);
     }
-    $conn->query("set names 'utf8'");
+
+    $sql = "select count(*) as amount from user";
+    $result = $conn->query($sql);
+    list($amount) = $result->fetch_row();
+    $cnt = $amount;
+    $cnt ++;
+
     $md5 = md5(md5($passwd));
-    $sql = "INSERT INTO user (username,passwd,permission,time)
-			VALUES ('$username' ,'$md5','user',now())";
+    $sql = "INSERT INTO user (id,username,passwd,permission,time)
+			VALUES ('$cnt','$username' ,'$md5','user',now())";
     if (mysqli_query($conn, $sql))
     {
 

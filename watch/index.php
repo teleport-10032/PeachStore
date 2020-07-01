@@ -24,9 +24,10 @@
         <!--            第一行-->
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;position: sticky;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
 
@@ -39,10 +40,12 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="series5_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=23" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 15px">Apple Watch
                     <br>
                     Series 5
                 </p>
+                </a>
                 <p style="color: #ee722e;font-size: 12px;line-height: 1px">
                     新款
                 </p>
@@ -53,10 +56,12 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="series3_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=24" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 15px">Apple Watch
                 <br>
                     Series 3
                 </p>
+                </a>
             </div>
         </div>
         <!--                series3_ico-->
@@ -111,12 +116,12 @@
                         <br><br>
                         <div style="margin-left: 30px">
                             <div class="buy" >
-                                <a href="#" style="text-decoration: none;color: white">购买</a>
+                                <a href="/goods?id=23" style="text-decoration: none;color: white">购买</a>
                             </div>
                         </div>
                         <br>
                         <div style="padding-left: 25px">
-                            <a href="#" class="noline" style="font-size: 18px;">
+                            <a href="/goods?id=23" class="noline" style="font-size: 18px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 18px"> ›</span>
@@ -154,12 +159,12 @@
                         <br><br>
                         <div style="margin-left: 30px">
                             <div class="buy" >
-                                <a href="#" style="text-decoration: none;color: white">购买</a>
+                                <a href="/goods?id=24" style="text-decoration: none;color: white">购买</a>
                             </div>
                         </div>
                         <br>
                         <div style="padding-left: 20px">
-                            <a href="#" class="noline" style="font-size: 18px;">
+                            <a href="/goods?id=24" class="noline" style="font-size: 18px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 18px"> ›</span>

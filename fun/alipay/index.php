@@ -5,6 +5,37 @@
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
  */
+session_start();
+if (isset($_SESSION['user'])) {
+    $username = $_SESSION['user'];
+}
+if(isset($_POST["content"]))
+    $content = $_POST["content"];
+if(isset($_POST["address"]))
+    $address = $_POST["address"];
+if(isset($_POST["price"]))
+    $price = $_POST["price"];
+if(isset($_POST["phone"]))
+    $phone = $_POST["phone"];
+include "../../fun/conn.php";
+$conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+if (!$conn) {
+    exit("连接失败: " . $conn->connect_error);
+}
+$conn->query("set names 'utf8'");
+$sql = "insert into task(user,content,price,target,statu,time,phone) values('$username','$content','$price','$address','未付款',now(),'$phone')";
+if (mysqli_query($conn, $sql))
+{
+    $sql2 = "update user set bag='' where username='$username'";
+    mysqli_query($conn, $sql2);
+
+    echo "<script>url='/fun/alipay';window.location.href=url;</script>";
+}
+else {
+//    echo $conn->error;
+//    echo "<script>alert('保存失败');</script>";
+}
+$conn->close();
 
 ?>
 <!DOCTYPE html>
@@ -178,10 +209,6 @@
 <div id="main">
     <div id="tabhead" class="tab-head">
         <h2 id="tab1" class="selected" name="tab">付 款</h2>
-        <h2 id="tab2" name="tab">交 易 查 询</h2>
-        <h2 id="tab3" name="tab">退 款</h2>
-        <h2 id="tab4" name="tab">退 款 查 询</h2>
-        <h2 id="tab5" name="tab">交 易 关 闭</h2>
     </div>
         <form name=alipayment action=pagepay/pagepay.php method=post target="_blank">
             <div id="body1" class="show" name="divcontent">
@@ -397,8 +424,8 @@
 		sNow += String(vNow.getSeconds());
 		sNow += String(vNow.getMilliseconds());
 		document.getElementById("WIDout_trade_no").value =  sNow;
-		document.getElementById("WIDsubject").value = "测试";
-		document.getElementById("WIDtotal_amount").value = "100";
+		document.getElementById("WIDsubject").value = "PeachStore订单支付";
+		document.getElementById("WIDtotal_amount").value = "<?php echo "$price"; ?>>";
 	}
 	GetDateNow();
 </script>

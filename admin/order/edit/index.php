@@ -22,18 +22,18 @@ $conn->query("set names 'utf8'");
 if (isset($_GET['id'])) {
     $uid = $_GET['id'];
 }
-$str = "select id,user_id,goods_id,package,price,target,statu,time from task where id=$uid";
+$str = "select id,user,content,price,target,statu,time,phone from task where id=$uid";
 $result = $conn->query($str);
-while (list($idd,$user_idd,$goods_idd,$packagee,$pricee,$targett,$statuu,$timee) = $result->fetch_row())
+while (list($idd,$user_idd,$contentt,$pricee,$targett,$statuu,$timee,$phonee) = $result->fetch_row())
 {
     $id = $idd;
     $user_id = $user_idd;
-    $goods_id = $goods_idd;
-    $package = $packagee;
+    $content = $contentt;
     $price = $pricee;
     $target = $targett;
     $statu = $statuu;
     $time = $timee;
+    $phone = $phonee;
 }
 
 ?>
@@ -65,18 +65,10 @@ while (list($idd,$user_idd,$goods_idd,$packagee,$pricee,$targett,$statuu,$timee)
                 </div>
                 <div class="form-group">
                     <label>
-                        商品id
+                        订单内容
                     </label>
                     <input class="form-control" id="exampleInputEmail1"
-                           style="width: 250px" value="<?php echo "$goods_id"; ?>" name="goods_id"
-                           />
-                </div>
-                <div class="form-group">
-                    <label>
-                        套餐
-                    </label>
-                    <input class="form-control" id="exampleInputEmail1"
-                           style="width: 500px" value="<?php echo "$package"; ?>" name="package"
+                           style="width: 250px" value="<?php echo "$content"; ?>" name="content"
                            />
                 </div>
                 <div class="form-group">
@@ -85,7 +77,15 @@ while (list($idd,$user_idd,$goods_idd,$packagee,$pricee,$targett,$statuu,$timee)
                     </label>
                     <input class="form-control" id="exampleInputEmail1"
                            style="width: 250px" value="<?php echo "$price"; ?>" name="price"
-                           />
+                    />
+                </div>
+                <div class="form-group">
+                    <label>
+                        联系方式
+                    </label>
+                    <input class="form-control" id="exampleInputEmail1"
+                           style="width: 250px" value="<?php echo "$phone"; ?>" name="phone"
+                    />
                 </div>
 
                 <div class="form-group">

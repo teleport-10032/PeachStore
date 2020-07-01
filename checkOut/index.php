@@ -23,9 +23,10 @@ if (isset($_GET['key'])) {
     <div style="width: 100%;height: 43px;padding: 0;margin: 0;top: 0;">
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>
@@ -44,24 +45,68 @@ if (isset($_GET['key'])) {
             </div>
             <div style="flex: 3;"></div>
             <div style="flex: 5;">
-                <form role="form" style="padding-top: 50px;">
+                <form role="form" style="padding-top: 50px;" action="../fun/alipay" method="post">
                     <div class="form-group">
                         <label for="exampleInputPassword1">订单编号</label>
                         <input type="text" class="form-control" id="exampleInputPassword1" readonly
-                               value="1"/>
+                               value="auto"/>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">订单内容</label>
                         <input type="text" class="form-control" id="exampleInputPassword1" readonly
-                               value="iPhoneSE 64GB">
+                               name="content"
+                               value="<?php
+                               if (isset($_SESSION['user'])) {
+                                   $username = $_SESSION['user'];
+                               }
+                               include "../fun/conn.php";
+                               $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+                               if (!$conn) {
+                                   exit("连接失败: " . $conn->connect_error);
+                               }
+                               $conn->query("set names 'utf8'");
+
+                               //echo "<script>alert('$username')</script>";
+                               $str = "select bag from user where username='$username'";
+
+                               $result = $conn->query($str);
+
+                               $price_all = 0;
+                               $content_all = "";
+
+                               while (list($bagg) = $result->fetch_row())
+                               {
+                                   $bag_array = explode(";", $bagg);
+                                   $len = count($bag_array);
+                                   for($i = 0 ; $i < $len ; $i += 2)
+                                   {
+                                       $j = $i + 1;
+                                       $str2 = "select pic,name,package from goods where id=$bag_array[$i]";
+                                       $result2 = $conn->query($str2);
+                                       while (list($picc,$namee,$package) = $result2->fetch_row())
+                                       {
+                                           $package_array = explode(";", $package);
+                                           $price = $package_array[($bag_array[$j]-1)*2+1];
+                                           $desc = $package_array[($bag_array[$j]-1)*2];
+                                           echo $namee." "."$desc".";";
+                                           $price_all += $price;
+                                           $content_all = $content_all.$namee." "."$desc".";";
+                                       }
+                                   }
+                               }
+                               ?>">
                     </div>
+                    <input type="hidden" name="price" value="<?php echo $price?>">
                     <div class="form-group">
                         <label for="exampleInputEmail1">送货地址</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" />
+                        <input type="text" class="form-control" id="exampleInputEmail1"
+                        autocomplete="off" name="address"
+                        />
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">联系方式</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" />
+                        <input type="text" class="form-control" id="exampleInputPassword1"
+                               autocomplete="off" name="phone"/>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">支付方式</label>

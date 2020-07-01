@@ -24,9 +24,9 @@
         <!--            第一行-->
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>
@@ -38,7 +38,9 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="ipadPro_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
-                <p style="font-size: 12px;line-height: 5px">iPad Pro</p>
+                <a href="/goods?id=16" style="text-decoration: none;color:black;">
+                    <p style="font-size: 12px;line-height: 5px">iPad Pro</p>
+                </a>
                 <p style="color: #ee722e;font-size: 12px;line-height: 5px">
                     新款
                 </p>
@@ -49,7 +51,9 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="ipadAir_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=17" style="text-decoration: none;color: black;">
                 <p style="font-size: 12px;line-height: 7px">iPad Air</p>
+                </a>
                 <p style="color: #ee722e;font-size: 12px;line-height: 3px">
                     新款
                 </p>
@@ -60,9 +64,11 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="iPad_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=18" style="text-decoration: none;color: black;">
                 <p style="font-size: 12px;line-height: 7px">
                     iPad
                 </p>
+                </a>
             </div>
         </div>
         <!--                iPad_ico-->
@@ -70,9 +76,12 @@
         <div style="flex: 8;display: flex;flex-direction:column;" class="pencil_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+
+                <a href="/goods?id=20" style="text-decoration: none;color: black;">
                 <p style="font-size: 12px;line-height: 8px">
-                    Apple Pencil
+                    Peach Pencil
                 </p>
+                </a>
                 <p style="color: #ee722e;font-size: 12px;line-height: 3px">
                     新款
                 </p>
@@ -109,9 +118,9 @@
                 </p>
                 <p style="font-size: 18px;padding-top: 20px;">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="noline2">进一步了解</a><font style="color: #0f5edd"> ›</font>
+                    <a href="/goods?id=16" class="noline2">进一步了解</a><font style="color: #0f5edd"> ›</font>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="noline2">购买</a><font style="color: #0f5edd;"> ›</font>
+                    <a href="/goods?id=16" class="noline2">购买</a><font style="color: #0f5edd;"> ›</font>
                 </p>
 <!--                <br>-->
 <!--                <a href="#" class="noline" style="font-size: 18px;margin-left: 10px;">进一步了解</a>-->
@@ -138,12 +147,12 @@
                 </p>
                 <div style="padding-left: 830px">
                     <div class="buy">
-                        <a href="#" style="text-decoration: none;color: white">购买</a>
+                        <a href="/goods?id=17" style="text-decoration: none;color: white">购买</a>
                     </div>
                 </div>
                 <div style="font-size: 18px;padding-top: 20px;padding-left: 780px">
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="noline2">
+                    <a href="/goods?id=17" class="noline2">
                         进一步了解
                     </a>
                     <font style="color: #0f5edd"> ›</font>
@@ -167,11 +176,11 @@
             </p>
             <div style="padding-left: 140px">
                 <div class="buy">
-                    <a href="#" style="text-decoration: none;color: white">购买</a>
+                    <a href="/goods?id=18" style="text-decoration: none;color: white">购买</a>
                 </div>
             </div>
             <div style="font-size: 18px;padding-top: 20px;padding-left: 140px">
-                <a href="#" class="noline2">
+                <a href="/goods?id=18" class="noline2">
                     进一步了解
                 </a>
                 <font style="color: #0f5edd"> ›</font>
@@ -188,18 +197,18 @@
                     iPad mini
                 </strong>
                 <p style="font-size: 25px;color: black;padding-top: 6px;line-height: 1px;padding-left: 140px">
-                    广受欢迎的iPad。
+                    身量小，能量大。
                 </p>
                 <p style="font-size: 16px;color: #86868b;padding-top: 3px;line-height: 15px;padding-left: 140px">
                     RMB 2499 起
                 </p>
                 <div style="padding-left: 140px">
                     <div class="buy">
-                        <a href="#" style="text-decoration: none;color: white">购买</a>
+                        <a href="/goods?id=19" style="text-decoration: none;color: white">购买</a>
                     </div>
                 </div>
                 <div style="font-size: 18px;padding-top: 20px;padding-left: 140px">
-                    <a href="#" class="noline2">
+                    <a href="/goods?id=19" class="noline2">
                         进一步了解
                     </a>
                     <font style="color: #0f5edd"> ›</font>
@@ -259,11 +268,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 40px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=16" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=16" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>
@@ -302,11 +311,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 55px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=17" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=17" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>
@@ -345,11 +354,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 55px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=18" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=18" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>
@@ -388,11 +397,11 @@
                         </p>
                         <br>
                         <div class="buy_small" style="margin-left: 55px">
-                            <a href="#" style="text-decoration: none;color: white;">购买</a>
+                            <a href="/goods?id=19" style="text-decoration: none;color: white;">购买</a>
                         </div>
                         <div style="padding-top: 13px;">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline" style="font-size: 13px;">
+                            <a href="/goods?id=19" class="noline" style="font-size: 13px;">
                                 进一步了解
                             </a>
                             <span style="color: #326bfc;font-size: 14px"> ›</span>

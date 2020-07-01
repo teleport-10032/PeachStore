@@ -11,11 +11,6 @@
     <script  src="/public/nav.js"></script>
 </head>
 
-<?php
-if (isset($_GET['key'])) {
-    $key = $_GET['key'];
-}
-?>
 <body>
 <div class="container_1">
 
@@ -23,9 +18,10 @@ if (isset($_GET['key'])) {
     <div style="width: 100%;height: 43px;padding: 0;margin: 0;top: 0;">
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>
@@ -37,9 +33,9 @@ if (isset($_GET['key'])) {
         <!--            左右2 5 2-->
             <div style="flex:2;"></div>
             <div style="flex:5;text-align: center">
-                <div style="font-size: 36px;padding-top: 60px">
-                    你的购物袋总计 RMB 6,598。
-                </div>
+<!--                <div style="font-size: 36px;padding-top: 60px">-->
+<!--                    你的购物袋总计 RMB 6,598。-->
+<!--                </div>-->
                 <div style="font-size: 15px;margin-top: 20px">
                     所有订单均可享受免费送货和退货服务。
                 </div>
@@ -60,87 +56,92 @@ if (isset($_GET['key'])) {
             <div style="flex: 8;padding-top: 25px">
                 <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
                 <!--                商品列表-->
-                <div class="goods">
-                    <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="220px" height="265px">
-                    </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
-                    <!--上下-->
-                        <div style="flex: 2;display: flex;">
-                            <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
-                                <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
-                                </div>
-                            </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
-                            </div>
-                        </div>
-                        <div style="flex: 5">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                红色<br>
-                                64GB<br>
-                                AppleCare+ 服务计划 (适用于 iPhone SE) - RMB 749<br>
-                            </div>
-                            <div style="height: 10px">
-                                <div style="padding-top: 4px">
-                                    <div style="width: 100%;height: 1px;background: #d1d1d6;"></div>
-                                </div>
-                            </div>
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px;
-                            ">
-                                <span style="bottom: 0px;">
-                                下午 3:00 前订购，预计送达日期：6月29日 - 免费<br>
-                                送货至： 历城区
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="goods">
+
+                <?php
+
+                if (isset($_SESSION['user'])) {
+                    $username = $_SESSION['user'];
+                }
+                include "../fun/conn.php";
+                $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+                if (!$conn) {
+                    exit("连接失败: " . $conn->connect_error);
+                }
+                $conn->query("set names 'utf8'");
+
+                //echo "<script>alert('$username')</script>";
+                $str = "select bag from user where username='$username'";
+
+                $result = $conn->query($str);
+                while (list($bagg) = $result->fetch_row())
+                {
+                    $bag_array = explode(";", $bagg);
+                    $len = count($bag_array);
+                    for($i = 0 ; $i < $len ; $i += 2)
+                    {
+                        $j = $i + 1;
+//                        当前商品套餐 $bag_array[$j]
+//                        echo "<script>alert('$bag_array[$i]')</script>";
+                        $str2 = "select pic,name,package from goods where id=$bag_array[$i]";
+                        $result2 = $conn->query($str2);
+                        while (list($picc,$namee,$package) = $result2->fetch_row())
+                        {
+                            $package_array = explode(";", $package);
+                            $price = $package_array[($bag_array[$j]-1)*2+1];
+                            $desc = $package_array[($bag_array[$j]-1)*2];
+                            echo "<div class=\"goods\">
                     <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="220px" height="265px">
+                    <div style=\"flex: 2;padding-left: 20px\">
+                        <img src=\"$picc\" width=\"220px\" height=\"265px\">
                     </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
+                    <div style=\"flex: 8;display: flex;flex-direction: column\">
                         <!--上下-->
-                        <div style="flex: 2;display: flex;">
+                        <div style=\"flex: 2;display: flex;\">
                             <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
+                            <div style=\"flex:5;padding-top: 30px;padding-left: 50px;\">
                                 <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
+                                <div style=\"font-size: 26px;\">
+                                    $namee
                                 </div>
                             </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
+                            <div style=\"flex:5;font-size: 26px;padding-top: 30px;text-align: right\">
+                                RMB $price 
                             </div>
                         </div>
-                        <div style="flex: 5">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                红色<br>
-                                64GB<br>
-                                AppleCare+ 服务计划 (适用于 iPhone SE) - RMB 749<br>
+                        <div style=\"flex: 5\">
+                            <div style=\"font-size: 13px;padding-left: 50px;line-height: 23px\">";
+
+                            echo $desc;
+
+
+
+                            echo"
                             </div>
-                            <div style="height: 10px">
-                                <div style="padding-top: 4px">
-                                    <div style="width: 100%;height: 1px;background: #d1d1d6;"></div>
+                            <div style=\"height: 10px\">
+                                <div style=\"padding-top: 4px\">
+                                    <div style=\"width: 100%;height: 1px;background: #d1d1d6;\"></div>
                                 </div>
                             </div>
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px;
-                            ">
-                                <span style="bottom: 0px;">
-                                下午 3:00 前订购，预计送达日期：6月29日 - 免费<br>
-                                送货至： 历城区
+                            <div style=\"font-size: 13px;padding-left: 50px;line-height: 23px;
+                            \">
+                                <span style=\"bottom: 0px;\">
+                                免费配送<br>
                                 </span>
                             </div>
                         </div>
                     </div>
-                </div>
+                           <div style='height: 100px'>
+                           <a href='delete.php?goods=$bag_array[$i]&package=$bag_array[$j]'> 
+                           删除
+                               </a>
+                           </div>
+                </div>";
+                        }
+                    }
+                }
+
+                ?>
 
 
                 <!--                商品列表-->
@@ -193,13 +194,6 @@ if (isset($_GET['key'])) {
     <!--        最下边灰白色结束-->
 </div>
 </body>
-<script type="text/javascript">
-    function onKeyDown(event) {
-        var e = event || window.event || arguments.callee.caller.arguments[0];
-        var key = document.getElementById("key").value;
-        if (e && e.keyCode == 13) {
-            window.location.href="index.php?key="+key;
-        }
-    }
-</script>
+
+<script>window.history.replaceState(null, null, window.location.href);</script>
 </html>

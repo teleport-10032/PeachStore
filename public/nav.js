@@ -1,6 +1,6 @@
 function nav_print() {
-   document.write("\n" +
-       "<!--            第二行-->\n" +
+
+   document.write("<!--            第二行-->\n" +
        "<div style=\"width: 100%;height: 53%;background: black;display: flex;\">\n" +
        "    <div style=\"flex: 170;\"></div>\n" +
        "    <a style=\"flex: 40; padding-top:10px\" href=\"/\">\n" +
@@ -41,35 +41,23 @@ function nav_print() {
        "           onmouseover=\"this.className='top22_jianbian1'\"\n" +
        "        >Music</a>\n" +
        "    </div>\n" +
-       "    <div style=\"flex: 80;\"></div>\n" +
-       "    <div class=\"top21_chinese\">\n" +
-       "        <a href=\"/support\" class=\"top22_chinese\"\n" +
-       "           onmouseout=\"this.className='top22_chinese_jianbian2'\"\n" +
-       "           onmouseover=\"this.className='top22_chinese_jianbian1'\"\n" +
-       "        >技术支持</a>\n" +
-       "    </div>\n" +
-       "    <div style=\"flex: 50;\"></div>\n" +
-       "    <div style=\"flex: 100;\">\n" +
+       "\n" +
+       "    <div style=\"flex: 70;\">\n" +
        "        <a href=\"/search\">\n" +
        "            <img src=\"/assets/img/index/search.svg\" width=\"90px\" height=\"90px\">\n" +
        "        </a>\n" +
        "    </div>\n" +
-       "    <div style=\"flex:20;\"></div>\n" +
-       "    <div style=\"flex: 100;\">\n" +
+       "    <div style=\"flex: 70;\">\n" +
        "        <a href=\"/bag\">\n" +
        "            <img src=\"/assets/img/index/shop.svg\" width=\"45px\" height=\"45px\" style=\"padding-top: 2px\">\n" +
        "        </a>\n" +
        "    </div>\n" +
-       "    <div style=\"flex: 250;color: #adadad;text-align: right;padding-top: 14px;\">\n" +
-       "        <span style=\"padding-right: 50px;font-size: 13px;\">\n" +
-       "        <a href=\"/fun/login\" class=\"top22_chinese\"\n" +
-       "           onmouseout=\"this.className='top22_chinese_jianbian2'\"\n" +
-       "           onmouseover=\"this.className='top22_chinese_jianbian1'\"\n" +
-       "        >登录</a>\n" +
-       "        </span>\n" +
-       "    </div>\n" +
-       "</div>\n" +
-       "<!--            第二行-->");
+       "\n" +
+       "    <div style=\"flex: 250;color: #adadad;text-align: right;padding-top: 14px;\">"
+       +
+       ""
+
+   );
 
 }
 

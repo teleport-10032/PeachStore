@@ -24,9 +24,10 @@
         <!--            第一行-->
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>
@@ -38,7 +39,10 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="airpodspro_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+
+                <a href="/goods?id=25" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 5px;color: white">AirPods Pro</p>
+                </a>
                 <p style="color: #767676;font-size: 12px;line-height: 5px">
                     新款
                 </p>
@@ -49,7 +53,9 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="airpods_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=26" style="text-decoration: none;color:black;">
                 <p style="font-size: 12px;line-height: 7px;color: white">AirPods</p>
+                </a>
                 <p style="color: #767676;font-size: 12px;line-height: 3px">
                     新款
                 </p>
@@ -60,9 +66,12 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="homepod_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=27" style="text-decoration: none;color:black;">
+
                 <p style="font-size: 12px;line-height: 12px;color: white">
                     HomePod
                 </p>
+                </a>
             </div>
         </div>
         <!--                homepod_ico-->
@@ -70,9 +79,12 @@
         <div style="flex: 10;display: flex;flex-direction:column;" class="ipod_ico">
             <div style="flex: 14;"></div>
             <div style="flex:13;text-align: center;">
+                <a href="/goods?id=28" style="text-decoration: none;color:black;">
+
                 <p style="font-size: 12px;line-height: 12px;color: white">
                     iPod
                 </p>
+                </a>
             </div>
         </div>
         <!--                ipod_ico-->
@@ -100,9 +112,9 @@
                     妙得不同凡响。
                 </span>
                 <p style="font-size: 16px;padding-top: 15px;">
-                    <a href="#" class="noline">进一步了解</a><span style="color: #326bfc;"> ›</span>
+                    <a href="/goods?id=25" class="noline">进一步了解</a><span style="color: #326bfc;"> ›</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="#" class="noline">购买</a><span style="color: #326bfc;"> ›</span>
+                    <a href="/goods?id=25" class="noline">购买</a><span style="color: #326bfc;"> ›</span>
                 </p>
             </div>
             <div style="flex:17"></div>
@@ -133,9 +145,9 @@
                             <span>只有妙不可言。</span>
                         </span>
                         <p style="font-size: 16px;padding-top: 20px;">
-                            <a href="#" class="noline">进一步了解</a><font style="color: #326bfc;"> ›</font>
+                            <a href="/goods?id=26" class="noline">进一步了解</a><font style="color: #326bfc;"> ›</font>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline">购买</a><font style="color: #326bfc;"> ›</font>
+                            <a href="/goods?id=26" class="noline">购买</a><font style="color: #326bfc;"> ›</font>
                         </p>
                     </div>
                     <div style="flex: 45"></div>
@@ -161,9 +173,9 @@
                             <span>随身带着走。</span>
                         </span>
                             <p style="font-size: 16px;padding-top: 20px;">
-                                <a href="#" class="noline">进一步了解</a><font style="color: #326bfc;"> ›</font>
+                                <a href="/goods?id=28" class="noline">进一步了解</a><font style="color: #326bfc;"> ›</font>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                <a href="#" class="noline">购买</a><font style="color: #326bfc;"> ›</font>
+                                <a href="/goods?id=28" class="noline">购买</a><font style="color: #326bfc;"> ›</font>
                             </p>
                         </div>
                         <div style="flex: 45"></div>
@@ -187,9 +199,9 @@
                             <span style="font-size: 37px">家的新声。<span/>
                         </span>
                         <p style="font-size: 16px;padding-top: 65px;">
-                            <a href="#" class="noline">进一步了解</a><font style="color: #326bfc;"> ›</font>
+                            <a href="/goods?id=27" class="noline">进一步了解</a><font style="color: #326bfc;"> ›</font>
                             &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#" class="noline">购买</a><font style="color: #326bfc;"> ›</font>
+                            <a href="/goods?id=27" class="noline">购买</a><font style="color: #326bfc;"> ›</font>
                         </p>
                     </div>
                     <div style="flex: 45"></div>
@@ -213,7 +225,7 @@
                             <span>搭个好看的装备。</span>
                         </span>
                             <p style="font-size: 16px;padding-top: 20px;">
-                                <a href="#" class="noline">选购耳机和扬声器</a><font style="color: #326bfc;"> ›</font>
+                                <a href="/music/all" class="noline">选购耳机和扬声器</a><font style="color: #326bfc;"> ›</font>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                             </p>
                         </div>

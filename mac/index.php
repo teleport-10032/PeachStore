@@ -24,9 +24,9 @@
             <!--            第一行-->
             <!--            第二行-->
             <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-                <script>
-                    nav_print();
-                </script>
+                <?php
+                include '../public/nav.php';
+                ?>
             </div>
             <!--            第二行-->
         </div>
@@ -151,7 +151,7 @@
                 <span style="font-size: 24px;padding-left: 140px">够轻，够轻快。</span><br>
                 <br>
                 <div class="buy" style="margin-left: 140px">
-                    <a href="/goods?id=11" style="text-decoration: none;color: white;">购买</a>
+                    <a href="/goods?id=12" style="text-decoration: none;color: white;">购买</a>
                 </div>
                 <br>
                 <a href="/goods?id=12" class="noline" style="font-size: 18px;margin-left: 140px">

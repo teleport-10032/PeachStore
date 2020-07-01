@@ -43,16 +43,19 @@
                         订单编号
                     </th>
                     <th>
-                        客户id
+                        客户
                     </th>
                     <th>
-                        订单商品
+                        订单内容
                     </th>
                     <th>
                         金额
                     </th>
                     <th>
-                        订单状态
+                        联系方式
+                    </th>
+                    <th>
+                        状态
                     </th>
                     <th>
                         下单时间
@@ -68,9 +71,9 @@
                     exit("连接失败: " . $conn->connect_error);
                 }
                 $conn->query("set names 'utf8'");
-                $str = "select id,user_id,goods_id,package,price,statu,time from task order by time desc";
+                $str = "select id,user,content,price,statu,time,phone from task order by time desc";
                 $result = $conn->query($str);
-                while (list($id,$user_id,$goods_id,$package,$price,$statu,$time) = $result->fetch_row())
+                while (list($id,$user_id,$content,$price,$statu,$time,$phone) = $result->fetch_row())
                 {
                     echo
                     " <tr onclick=\"location.href='edit?id=$id';\">
@@ -81,10 +84,13 @@
                         $user_id
                     </td>
                     <td>
-                        $goods_id
+                        $content
                     </td>
                     <td>
                         $price
+                    </td>
+                    <td>
+                        $phone
                     </td>
                     <td>
                         $statu

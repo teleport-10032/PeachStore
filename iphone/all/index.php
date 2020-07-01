@@ -24,9 +24,10 @@
         <!--            第一行-->
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
-            <script>
-                nav_print();
-            </script>
+
+            <?php
+            include '../../public/nav.php';
+            ?>
         </div>
         <!--            第二行-->
     </div>
@@ -52,127 +53,63 @@
             <div style="flex: 8;padding-top: 25px">
                 <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
                 <!--                商品列表-->
-                <div class="goods">
+
+
+
+                <?php
+                include '../../fun/conn.php';
+                $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+                if (!$conn) {
+                    exit("连接失败: " . $conn->connect_error);
+                }
+                $conn->query("set names 'utf8'");
+
+                $str = "select id,name,type,pic,package,description from goods where type='iphone'";
+                $result = $conn->query($str);
+                while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_row())
+                {
+                    $id = $idd;
+                    $name = $namee;
+                    $type = $typee;
+                    $pic = $picc;
+                    $package = $packagee;
+                    $description = $descriptionn;
+                    $package_array = explode(";",$package);
+                    $len = count($package_array);
+                    $minn = 99999999;
+                    for($i = 1 ; $i <= $len ; $i+=2)
+                        if($minn > $package_array[$i])
+                            $minn = $package_array[$i];
+                    echo "<div class=\"goods\">
                     <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
+                    <div style=\"flex: 2;padding-left: 20px;padding-top: 10px\">
+                        <img src=\"$pic\" width=\"150px\" height=\"200px\">
                     </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
+                    <div style=\"flex: 8;display: flex;flex-direction: column\">
                         <!--上下-->
-                        <div style="flex: 2;display: flex;">
+                        <div style=\"flex: 2;display: flex;\">
                             <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
+                            <div style=\"flex:5;padding-top: 30px;padding-left: 50px;\">
                                 <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
+                                <div style=\"font-size: 26px;\">
+                                    <a href='/goods?id=$id' 
+                                    style='text-decoration: none;color: black'>$name</a>
                                 </div>
                             </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
+                            <div style=\"flex:5;font-size: 26px;padding-top: 30px;text-align: right\">
+                                RMB $minn 起
                             </div>
                         </div>
-                        <div style="flex: 2">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
+                        <div style=\"flex: 2\">
+                            <div style=\"font-size: 13px;padding-left: 50px;line-height: 23px\">
+                                $description
                             </div>
                         </div>
                     </div>
                 </div>
-                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
-
-                <div class="goods">
-                    <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
-                    </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
-                        <!--上下-->
-                        <div style="flex: 2;display: flex;">
-                            <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
-                                <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
-                                </div>
-                            </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
-                            </div>
-                        </div>
-                        <div style="flex: 2">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
-
-                <div class="goods">
-                    <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
-                    </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
-                        <!--上下-->
-                        <div style="flex: 2;display: flex;">
-                            <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
-                                <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
-                                </div>
-                            </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
-                            </div>
-                        </div>
-                        <div style="flex: 2">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
-
-                <div class="goods">
-                    <!--    左右-->
-                    <div style="flex: 2;padding-left: 20px">
-                        <img src="/assets/img/search/iphonese.jpeg" width="170px" height="200px">
-                    </div>
-                    <div style="flex: 8;display: flex;flex-direction: column">
-                        <!--上下-->
-                        <div style="flex: 2;display: flex;">
-                            <!--    左右-->
-                            <div style="flex:5;padding-top: 30px;padding-left: 50px;">
-                                <!--    左右-->
-                                <div style="font-size: 26px;">
-                                    iPhone SE
-                                </div>
-                            </div>
-                            <div style="flex:5;font-size: 26px;padding-top: 30px;text-align: right">
-                                RMB 3,299起
-                            </div>
-                        </div>
-                        <div style="flex: 2">
-                            <div style="font-size: 13px;padding-left: 50px;line-height: 23px">
-                                A13芯片<br>
-                                4.7 英寸视网膜高清显示屏<br>
-                                可选 64/128/256 GB 存储<br>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="width: 100%;height: 1px;background: #d1d1d6"></div>
-
-
+                <div style=\"width: 100%;height: 1px;background: #d1d1d6\"></div>";
+                }
+                ?>
 
 
                 <!--                商品列表-->
