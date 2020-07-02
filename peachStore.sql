@@ -11,7 +11,7 @@
  Target Server Version : 80011
  File Encoding         : 65001
 
- Date: 02/07/2020 09:08:19
+ Date: 02/07/2020 11:06:09
 */
 
 SET NAMES utf8mb4;
@@ -100,7 +100,7 @@ CREATE TABLE `user` (
   `passwd` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `bag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `permission` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `time` datetime DEFAULT NULL,
   PRIMARY KEY (`username`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
