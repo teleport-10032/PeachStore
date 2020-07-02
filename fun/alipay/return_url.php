@@ -44,8 +44,30 @@ if($result) {//验证成功
 	echo "验证成功<br />支付宝交易号：".$trade_no;
 
 	//——请根据您的业务逻辑来编写程序（以上代码仅作参考）——
-	
-	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    include "../../fun/conn.php";
+
+    $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+    if (!$conn) {
+        exit("连接失败: " . $conn->connect_error);
+    }
+    $conn->query("set names 'utf8'");
+
+    $sql = "update task set statu='待发货' where order_id='$out_trade_no'";
+    if (mysqli_query($conn, $sql))
+    {
+        echo "<script>window.location.href='/order'</script>";
+    }
+    else {
+        //echo $conn->error;
+        echo "<script>alert('保存失败');</script>";
+        echo "<script>url='/';window.location.href=url;</script>";
+    }
+    $conn->close();
+
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
 else {
     //验证失败

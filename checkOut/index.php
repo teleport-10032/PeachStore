@@ -45,7 +45,7 @@ if (isset($_GET['key'])) {
             </div>
             <div style="flex: 3;"></div>
             <div style="flex: 5;">
-                <form role="form" style="padding-top: 50px;" action="../fun/alipay" method="post">
+                <form role="form" style="padding-top: 50px;" action="fun.php" method="post">
                     <div class="form-group">
                         <label for="exampleInputPassword1">订单编号</label>
                         <input type="text" class="form-control" id="exampleInputPassword1" readonly
@@ -74,6 +74,13 @@ if (isset($_GET['key'])) {
                                $price_all = 0;
                                $content_all = "";
 
+                               $str2 = "select id from task order by id desc limit 1";
+                               $result2 = $conn->query($str2);
+                               while (list($numm) = $result2->fetch_row())
+                               {
+                                   $num = $numm + 1;
+                               }
+
                                while (list($bagg) = $result->fetch_row())
                                {
                                    $bag_array = explode(";", $bagg);
@@ -96,7 +103,8 @@ if (isset($_GET['key'])) {
                                }
                                ?>">
                     </div>
-                    <input type="hidden" name="price" value="<?php echo $price?>">
+                    <input type="hidden" name="price" value="<?php echo $price_all ?>">
+                    <input type="hidden" name="id" value="<?php echo $num ?>">
                     <div class="form-group">
                         <label for="exampleInputEmail1">送货地址</label>
                         <input type="text" class="form-control" id="exampleInputEmail1"

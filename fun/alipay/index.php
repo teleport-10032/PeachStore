@@ -1,42 +1,33 @@
 <?php
+    if(isset($_GET["id"]))
+        $id = $_GET["id"];
+    include "../../fun/conn.php";
+    $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+    if (!$conn) {
+        exit("连接失败: " . $conn->connect_error);
+    }
+    $conn->query("set names 'utf8'");
+
+//    echo "<script>alert('$id')</script>";
+    $str = "select content,price from task where id=$id";
+
+    $result = $conn->query($str);
+    while (list($contentt,$pricee) = $result->fetch_row())
+    {
+        $content = $contentt;
+        $price = $pricee;
+    }
+
+
+
+    $conn->close();
+
 /* *
  * 功能：支付宝电脑支付调试入口页面
  * 修改日期：2017-03-30
  * 说明：
  * 以下代码只是为了方便商户测试而提供的样例代码，商户可以根据自己网站的需要，按照技术文档编写,并非一定要使用该代码。
  */
-session_start();
-if (isset($_SESSION['user'])) {
-    $username = $_SESSION['user'];
-}
-if(isset($_POST["content"]))
-    $content = $_POST["content"];
-if(isset($_POST["address"]))
-    $address = $_POST["address"];
-if(isset($_POST["price"]))
-    $price = $_POST["price"];
-if(isset($_POST["phone"]))
-    $phone = $_POST["phone"];
-include "../../fun/conn.php";
-$conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
-if (!$conn) {
-    exit("连接失败: " . $conn->connect_error);
-}
-$conn->query("set names 'utf8'");
-$sql = "insert into task(user,content,price,target,statu,time,phone) values('$username','$content','$price','$address','未付款',now(),'$phone')";
-if (mysqli_query($conn, $sql))
-{
-    $sql2 = "update user set bag='' where username='$username'";
-    mysqli_query($conn, $sql2);
-
-    echo "<script>url='/fun/alipay';window.location.href=url;</script>";
-}
-else {
-//    echo $conn->error;
-//    echo "<script>alert('保存失败');</script>";
-}
-$conn->close();
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -204,7 +195,7 @@ $conn->close();
 </head>
 <body text=#000000 bgColor="#ffffff" leftMargin=0 topMargin=4>
 <header class="am-header">
-        <h1>支付宝电脑网站支付体验入口页</h1>
+        <h1>支付宝电脑网站支付入口</h1>
 </header>
 <div id="main">
     <div id="tabhead" class="tab-head">
@@ -216,24 +207,24 @@ $conn->close();
                     <dt>商户订单号
 ：</dt>
                     <dd>
-                        <input id="WIDout_trade_no" name="WIDout_trade_no" />
+                        <input id="WIDout_trade_no" name="WIDout_trade_no" readonly/>
                     </dd>
                     <hr class="one_line">
                     <dt>订单名称
 ：</dt>
                     <dd>
-                        <input id="WIDsubject" name="WIDsubject" />
+                        <input id="WIDsubject" name="WIDsubject" readonly/>
                     </dd>
                     <hr class="one_line">
                     <dt>付款金额
 ：</dt>
                     <dd>
-                        <input id="WIDtotal_amount" name="WIDtotal_amount" />
+                        <input id="WIDtotal_amount" name="WIDtotal_amount" readonly/>
                     </dd>
                     <hr class="one_line">
                     <dt>商品描述：</dt>
                     <dd>
-                        <input id="WIDbody" name="WIDbody" />
+                        <input id="WIDbody" name="WIDbody" value="<?php echo $content;?>" readonly/>
                     </dd>
                     <hr class="one_line">
                     <dt></dt>
@@ -425,8 +416,33 @@ $conn->close();
 		sNow += String(vNow.getMilliseconds());
 		document.getElementById("WIDout_trade_no").value =  sNow;
 		document.getElementById("WIDsubject").value = "PeachStore订单支付";
-		document.getElementById("WIDtotal_amount").value = "<?php echo "$price"; ?>>";
-	}
-	GetDateNow();
+		document.getElementById("WIDtotal_amount").value = "<?php echo "$price"; ?>";
+	    return  sNow;
+    }
+	var order_id = GetDateNow();
+
 </script>
+
+    <?php
+    $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
+    if (!$conn) {
+        exit("连接失败: " . $conn->connect_error);
+    }
+
+    $oid = "<script>document.write(order_id)</script>";
+//    echo $oid;
+
+
+//    $sql = "update task set order_id="."$oid2"." where id='$id'";
+//    $sql = "update task set order_id="."$oid"." where id='$id'";
+    if (mysqli_query($conn, $sql))
+    {
+//        echo "<script>window.location.href='/order'</script>";
+    }
+    else {
+        echo $conn->error;
+//        echo "<script>alert('保存失败');</script>";
+//        echo "<script>url='/';window.location.href=url;</script>";
+    }
+    ?>
 </html>

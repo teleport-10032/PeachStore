@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>iPad - Peach (中国大陆)</title>
+    <title>Peach - Peach (中国大陆)</title>
     <link rel="Shortcut Icon" href="/assets/ico/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="/assets/css/mac.css">
     <script  src="/public/nav.js"></script>
@@ -25,7 +25,7 @@
         <!--            第二行-->
         <div id="nav" style="width: 100%;height: 84px;padding: 0;margin: 0;top: 0;">
             <?php
-            include '../../public/nav.php';
+            include 'public/nav.php';
             ?>
         </div>
         <!--            第二行-->
@@ -42,7 +42,7 @@
             <div style="flex:2;"></div>
             <div style="flex:5;font-size: 35px;text-align: center">
                 <p>
-                    选购您的iPad和配件。
+                    选购您的商品。
                 </p>
             </div>
             <div style="flex:2;"></div>
@@ -55,14 +55,14 @@
                 <!--                商品列表-->
 
                 <?php
-                include '../../fun/conn.php';
+                include 'fun/conn.php';
                 $conn = new mysqli($servername, $dbusername, $dbpasswd, $dbname);
                 if (!$conn) {
                     exit("连接失败: " . $conn->connect_error);
                 }
                 $conn->query("set names 'utf8'");
 
-                $str = "select id,name,type,pic,package,description from goods where type='iPad'";
+                $str = "select id,name,type,pic,package,description from goods";
                 $result = $conn->query($str);
                 while (list($idd,$namee,$typee,$picc,$packagee,$descriptionn) = $result->fetch_row())
                 {

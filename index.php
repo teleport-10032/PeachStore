@@ -36,7 +36,7 @@
         <!--        白色条-->
         <div style="width: 100%;height: 33px;background: #ffffff;font-family: Myriad_set;">
             <p style="text-align: center;font-size: 12px;padding-top: 3px">
-                <a href="#" style="color: #1069c9;text-decoration:none">在线选购</a>，享受免费送货、Specialist 专家支持、免息分期等服务。
+                <a href="all.php" style="color: #1069c9;text-decoration:none">在线选购</a>，享受免费送货、Specialist 专家支持、免息分期等服务。
             </p>
         </div>
         <!--        白色条结束-->
