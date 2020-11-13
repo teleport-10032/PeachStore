@@ -1,0 +1,118 @@
+html,body
+{
+    width: 100%;height: 100%;padding: 0;
+    margin: 0;
+    font-family: Myriad_set;
+}
+@font-face {
+    font-family: Myriad_set;
+    src: url("/assets/font/Myriad_set.ttf")
+}
+
+.container_1
+{
+    width: 100%;height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.top21
+{
+    flex: 100;padding-top: 15px;
+    font-family: Myriad_set;
+    color: #adadad;
+    width: 500px;
+    height: 500px;
+}
+
+.top22
+{
+
+    font-size: 15px;
+    color: #adadad;
+    text-decoration: none;
+}
+
+.top22_jianbian1
+{
+    font-size: 15px;
+    transition: all 0.5s linear;
+    color: white !important;
+    text-decoration: none !important;
+}
+.top22_jianbian2
+{
+    font-size: 15px;
+    color: #adadad;
+    text-decoration: none;
+    transition: all 0.5s linear;
+}
+
+.top21_chinese
+{
+    flex: 100;padding-top: 14px;
+    font-family: Myriad_set;
+}
+
+.top22_chinese
+{
+    color: #adadad;font-size: 13px;
+    font-family: Myriad_set;
+    text-decoration: none;
+}
+.top22_chinese_jianbian1
+{
+    font-size: 13px;
+    transition: all 0.5s linear;
+    color: white !important;
+    text-decoration: none !important;
+}
+.top22_chinese_jianbian2
+{
+    font-size: 13px;
+    color: #adadad;
+    text-decoration: none;
+    transition: all 0.5s linear;
+}
+
+
+.iPhoneSE
+{
+    background-size: cover;-webkit-background-size: cover;-o-background-size: cover;
+    height: 580px;width: 100%;
+    text-align: center;
+    background:url("/assets/img/index/iPhoneSe.jpg") no-repeat center bottom;
+    background-size: 1080px 600px;
+}
+
+
+.noline
+{
+    color: #3299fc;
+    text-decoration: none;
+}
+.noline:hover
+{
+
+    color: #3299fc;
+    text-decoration: none;
+    border-bottom: 2px solid;
+}
+.noline2
+{
+    color: #0f5edd;
+    text-decoration: none;
+}
+.noline2:hover
+{
+
+    color: #0f5edd;
+    text-decoration: none;
+    border-bottom: 2px solid;
+}
+
+.goods
+{
+    height: 200px;width: 100%;
+    padding-top: 20px;padding-bottom: 20px;
+    display: flex;
+}
