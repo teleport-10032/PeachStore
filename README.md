@@ -1,2 +1,2 @@
 # front-end_Apple
-一个仿Apple的PC官网前端项目(CSS+JS)
+一个仿ApplePC官网项目(CSS+JS+PHP)
